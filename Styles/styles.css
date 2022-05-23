@@ -65,13 +65,16 @@ img{
     border-style: solid;
     border-color: hsl(210, 46%, 95%, 0.5);
 }
-.img-desc h2{
-    margin-bottom: -3px;
+.img-desc{
+    margin-top: -10px;
+}
+.img-desc h1{
     line-height: 0;
-    font-size: 16px;
+    font-size: 15px;
 }
 .img-desc p{
     font-size: 11px;
+    margin-top: -10px;
 }
 
 
@@ -175,8 +178,7 @@ img{
         margin-right: 10px;
         width: 25px;
     }
-    .img-desc h2{
-        margin-bottom: -3px;
+    .img-desc h1{
         font-size: 13px;
     }
     .img-desc p{
@@ -232,7 +234,7 @@ img{
         margin-bottom: 15px;
     }
     
-    
+
     /* Right side  */
     .right{
         width: 100%;
