@@ -1,4 +1,9 @@
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 :root{
     ---Moderate-violet: hsl(263, 55%, 52%);
     ---Very-dark-grayish-blue: hsl(217, 19%, 35%);
@@ -77,87 +82,77 @@ img{
     margin-top: -10px;
 }
 
+/* Container Formatting  */
+
+[class *= "box"]{
+    padding: 20px 25px;
+    border-radius: 2%;
+}
 
 .container{
     width: 65rem;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "b1 b1 b1 b1  b1 b1 b2 b2  b2 b5 b5 b5"
+    "b3 b3 b3 b4  b4 b4 b4 b4  b4 b5 b5 b5 ";
+    grid-gap: 20px;
     position: relative;
-}
-
-/* Left Side  */
-.left{
-    width: 80%;
-    margin-right: 25px;
-}
-
-/* Upper Section  */
-.upper{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 15px;
-    position: relative;
+    margin: 30px auto;
 }
 
 .first{
+    grid-area: b1;
     background-color: var(---Moderate-violet);
     color: var(---Light-grayish-blue);
-    margin-right: 25px;
-    border-radius: 2%;
-    padding: 20px 40px 5px 30px;
-    width: 70%;
-}
-.second{
-    background-color: var(---Very-dark-grayish-blue);
-    color: var(---Light-grayish-blue);
-    border-radius: 2%;
-    padding: 20px 30px 5px 30px;
-    width: 30%;
 }
 
-/* Lower Section  */
-.lower{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
+.second{
+    grid-area: b2;
+    background-color: var(---Very-dark-grayish-blue);
+    color: var(---Light-grayish-blue);
 }
 
 .third{
+    grid-area: b3;
     background-color: var(---White);
-    color: var(---Very-dark-grayish-blue);
-    margin-right: 20px;
-    border-radius: 2%;
-    padding: 20px 40px 5px 30px;
-    width: 30%;
+    color: var(---Very-dark-grayish-blue);  
 }
+
 .forth{
+    grid-area: b4;
     background-color: var(---Very-dark-blackish-blue);
-    color: var(---Light-grayish-blue);
-    border-radius: 2%;
-    padding: 20px 40px 5px 30px;
-    width: 70%;
+    color: var(---Light-grayish-blue); 
 }
 
-/* Right side  */
-.right{
-    width: 20%;
+.fifth{
+    grid-area: b5;
     background-color: var(---White);
     color: var(---Very-dark-grayish-blue);
-    border-radius: 2%;
-    padding: 20px 20px 0px 20px;
 }
 
 
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
-/* .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); } */
+@media (max-width: 1050px) {
+    .container{
+        width: 50rem;
+        display: grid;
+        grid-template-areas: 
+        "b1 b1 b1 b1  b1 b1 b1 b1  b2 b2 b2 b2"
+        "b3 b3 b3 b3  b4 b4 b4 b4  b4 b4 b4 b4"
+        "b5 b5 b5 b5  b5 b5 b5 b5  b5 b5 b5 b5";
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 10px;
+        position: relative;
+        margin: 20px auto;
+    } 
+}
 
-
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 830px) {
     
     /* Text Formatting  */
-    
     h1{
         font-size: 18px;
     }
@@ -167,11 +162,10 @@ img{
     }
     
     .quotation{
-        width: 80px;
-        height: 110px;
-        left: 180px;
+        width: 100px;
+        height: 100px;
+        left: 190px;
     }
-
 
     /* Profile Image Formatting  */
     img{
@@ -184,61 +178,17 @@ img{
     .img-desc p{
         font-size: 11px;
     }
- 
-    
-    .container{
-        width: 15rem;
-        flex-direction: column;
-        margin: 20px auto;
-    }
-    
-    
-    /* Left Side  */
-    .left{
-        width: 100%;
-        margin-right: 0px;
-    }
-    
-    /* Upper Section  */
-    .upper{
-        flex-direction: column;
-        margin-bottom: 0px;
-    }
-    
-    .first{
-        margin-right: 0px;
-        margin-bottom: 15px;
-        padding: 30px 30px 20px 30px;
-        width: 100%;
-    }
-    .second{
-        padding: 30px 30px 20px 30px;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    
-    /* Lower Section  */
-    .lower{
-        flex-direction: column;
-    }
-    
-    .third{
-        margin-right: 0px;
-        margin-bottom: 15px;
-        padding: 30px 30px 20px 30px;
-        width: 100%;
-    }
-    .forth{
-        padding: 30px 30px 20px 30px;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    
 
-    /* Right side  */
-    .right{
-        width: 100%;
-        padding: 30px 30px 20px 30px;
+    .container{
+        width: 20rem;
+        display: grid;
+        grid-template-areas: 
+        "b1 b1 b1 b1  b1 b1 b1 b1  b1 b1 b1 b1"
+        "b2 b2 b2 b2  b2 b2 b2 b2  b2 b2 b2 b2"
+        "b3 b3 b3 b3  b3 b3 b3 b3  b3 b3 b3 b3"
+        "b4 b4 b4 b4  b4 b4 b4 b4  b4 b4 b4 b4"
+        "b5 b5 b5 b5  b5 b5 b5 b5  b5 b5 b5 b5";
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 20px;
     }
-    
 }
